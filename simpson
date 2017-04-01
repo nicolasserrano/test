@@ -1,0 +1,22 @@
+<html>
+<script>
+function int(fx,a,b,n) {
+  dx =  (b-a)/n;
+  sum = 0;
+  odd = true;
+  sum += fx(a);
+  for (i=a + dx; i<=b -dx/2; i = i + dx) {
+    console.log('i: ' + i + ' fx: ' + fx(i))
+    if (odd) {
+      sum += 4*fx(i);
+    } else {
+      sum += 2*fx(i);
+    }
+    odd = !odd;
+  }
+  sum += fx(a);
+  sum = sum *dx /3;
+  return sum;
+}
+</script>
+</html>
