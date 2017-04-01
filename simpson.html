@@ -6,7 +6,7 @@ function int(fx,a,b,n) {
   odd = true;
   sum += fx(a);
   for (i=a + dx; i<=b -dx/2; i = i + dx) {
-    console.log('i: ' + i + ' fx: ' + fx(i))
+    //console.log('i: ' + i + ' fx: ' + fx(i))
     if (odd) {
       sum += 4*fx(i);
     } else {
@@ -14,10 +14,29 @@ function int(fx,a,b,n) {
     }
     odd = !odd;
   }
-  sum += fx(a);
+  sum += fx(b);
   sum = sum *dx /3;
   return sum;
 }
+  
+function simp(fx,a,b,n) {
+  h =  (b-a)/n;
+  sum = 0;
+  sum += fx(a)/2;
+  for (i=1; i<= n-1; i = i + 1) {
+      sum += fx(a+i*h);
+    }
+  for (i=1; i<= n; i = i + 1) {
+      sum += 2*fx(a-h/2+i*h);
+    }
+  
+  sum += fx(b)/2;
+  sum = sum *h /3;
+  return sum;
+}
+
+fx=function (x) {return Math.sin(x)}
+
 int(fx,3,5,128)
 </script>
 <body>
