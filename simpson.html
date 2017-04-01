@@ -1,6 +1,6 @@
 <html>
 <script>
-function int(fx,a,b,n) {
+function int(fx,a,b,n) {  // http://johndfenton.com/Lectures/Numerical-Methods/Numerical-Methods.pdf
   dx =  (b-a)/n;
   sum = 0;
   odd = true;
@@ -19,7 +19,7 @@ function int(fx,a,b,n) {
   return sum;
 }
   
-function simp(fx,a,b,n) {
+function simp(fx,a,b,n) {  // http://smath.info/wiki/GetFile.aspx?File=Examples/simpsonrichardson.pdf
   h =  (b-a)/n;
   sum = 0;
   sum += fx(a)/2;
