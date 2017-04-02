@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#box {
+   border: 1px solid blue;
+   width: 80px;
+}
+</style>
+</head>
+<body>
+
+<div >
+  <div ondrag="dragging(event)" draggable="true" id="box">Drag me!</div>
+</div>
+
+<p id="demo"></p>
+
+<script>
+function dragging(event) {
+event.preventDefault();
+    document.getElementById("demo").innerHTML = "The p element is being dragged x: " + event.x + " y: " + event.y;
+}
+
+</script>
+
+</body>
+</html>
